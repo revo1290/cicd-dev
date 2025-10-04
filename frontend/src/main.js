@@ -1,0 +1,53 @@
+import './assets/main.css'
+import '@mdi/font/css/materialdesignicons.css'
+
+import axios from 'axios';
+
+axios.defaults.withCredentials = true;
+axios.defaults.baseURL = 'http://localhost:8080';
+
+import { createApp } from 'vue'
+import App from './App.vue'
+import router from './router'
+
+import 'vuetify/styles'
+import { createVuetify } from 'vuetify'
+import * as components from 'vuetify/components'
+import * as directives from 'vuetify/directives'
+import { aliases, mdi } from 'vuetify/iconsets/mdi'
+
+const vuetify = createVuetify({
+  components,
+  directives,
+  icons: {
+    defaultSet: 'mdi',
+    aliases,
+    sets: {
+      mdi,
+    },
+  },
+  theme: {
+    defaultTheme: 'myCustomTheme',
+    themes: {
+      myCustomTheme: {
+        dark: false,
+        colors: {
+          primary: '#1976D2', // Deep Blue
+          secondary: '#424242', // Dark Grey
+          accent: '#82B1FF', // Light Blue Accent
+          error: '#FF5252', // Red
+          info: '#2196F3', // Blue
+          success: '#4CAF50', // Green
+          warning: '#FFC107', // Amber
+        },
+      },
+    },
+  },
+})
+
+const app = createApp(App)
+
+app.use(router)
+app.use(vuetify)
+
+app.mount('#app')

@@ -1,0 +1,9 @@
+com\example\demo\DemoApplication.class
+com\example\demo\SecurityConfig.class
+com\example\demo\User.class
+com\example\demo\UserDto.class
+com\example\demo\AuthController.class
+com\example\demo\HelloController.class
+com\example\demo\UserController.class
+com\example\demo\DataInitializer.class
+com\example\demo\UserRepository.class
